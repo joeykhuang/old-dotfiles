@@ -10,10 +10,41 @@ config:
   showdiff: false
   workdir: ~/.config/dotdrop
 dotfiles:
+  d_tmux:
+    dst: ~/.tmux
+    src: tmux
+  d_vim:
+    dst: ~/.vim
+    src: vim
+  d_vim_runtime:
+    dst: ~/.vim_runtime
+    src: vim_runtime
+  f_tmux.conf:
+    dst: ~/.tmux.conf
+    src: tmux.conf
+  f_tmux.conf.local:
+    dst: ~/.tmux.conf.local
+    src: tmux.conf.local
+  f_vim_mru_files:
+    dst: ~/.vim_mru_files
+    src: vim_mru_files
+  f_viminfo:
+    dst: ~/.viminfo
+    src: viminfo
   f_vimrc:
     dst: ~/.vimrc
     src: vimrc
 profiles:
   Joeys-MacBook-Pro.local:
     dotfiles:
+    - d_tmux
+    - f_tmux.conf
+    - f_tmux.conf.local
+  mac:
+    dotfiles:
     - f_vimrc
+    - d_vim
+    - f_vim_mru_files
+    - d_vim_runtime
+    - f_viminfo
+    - f_tmux.conf
